@@ -1,0 +1,14 @@
+# Dist
+**/dist/
+packages/*/dist
+
+# Public
+packages/*/public
+
+# Node modules
+**/node_modules/
+/node_modules
+packages/*/node_modules
+
+# Earth common Styleguide
+packages/earth-common/styleguide
