@@ -1,12 +1,9 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, View } from 'react-native';
-import { useListTickers } from '../../hooks';
-import { PropsListItem } from './ListTickers.props';
+import { Props, PropsListItem } from './ListTickers.props';
 import { ListItem } from '../ListItem';
 
-export const ListTickers = () => {
-	const { tickers, isLoading, nextPage } = useListTickers();
-
+export const ListTickers = ({ tickers, isLoading, nextPage }: Props) => {
 	const renderItem = ({ item }: PropsListItem) => {
 		return <ListItem item={item} />;
 	};

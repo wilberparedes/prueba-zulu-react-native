@@ -14,6 +14,7 @@ export const useListTickers = (): {
 	tickers: Tickers[];
 	isLoading: boolean;
 	nextPage: () => void;
+	filter: (text: string) => Tickers[];
 } => {
 	const [tickers, setTickers] = useState<Tickers[]>(INITIAL_TICKERS);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -49,9 +50,17 @@ export const useListTickers = (): {
 		setCurrentPage(currentPage + LIMIT_PAGE);
 	};
 
+	const filter = (text: string) => {
+		const tickersFilter = tickers.filter(
+			(ticker) => ticker.name.toLowerCase().indexOf(text) > -1
+		);
+		return tickersFilter;
+	};
+
 	return {
 		tickers,
 		isLoading,
 		nextPage,
+		filter,
 	};
 };

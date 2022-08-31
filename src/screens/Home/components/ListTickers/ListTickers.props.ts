@@ -29,3 +29,8 @@ export interface PropsListItem {
 	item: Tickers;
 	index: number;
 }
+export interface Props {
+	tickers: Tickers[];
+	isLoading: boolean;
+	nextPage: () => void;
+}
