@@ -1,3 +1,3 @@
 # prueba-zulu-react-native
-npm install
+npm install and 
 npx react-native run-android
