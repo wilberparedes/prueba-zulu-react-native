@@ -2,6 +2,7 @@ import React from 'react';
 import { ActivityIndicator, FlatList, View } from 'react-native';
 import { Props, PropsListItem } from './ListTickers.props';
 import { ListItem } from '../ListItem';
+import { Styles } from './ListTickers.styles';
 
 export const ListTickers = ({ tickers, isLoading, nextPage }: Props) => {
 	const renderItem = ({ item }: PropsListItem) => {
@@ -16,9 +17,7 @@ export const ListTickers = ({ tickers, isLoading, nextPage }: Props) => {
 			data={tickers}
 			renderItem={renderItem}
 			keyExtractor={(item, key) => `${key}`}
-			style={{
-				flex: 1,
-			}}
+			style={Styles.container}
 			onEndReached={nextPage}
 			onEndReachedThreshold={0.1}
 			ListFooterComponent={renderFooter}
